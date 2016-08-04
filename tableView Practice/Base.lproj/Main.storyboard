@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Ovn-Y8-wAA">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Grocery List Table View Controller-->
+        <scene sceneID="AxH-GB-Md1">
+            <objects>
+                <tableViewController id="u5t-bb-LR4" customClass="GroceryListTableViewController" customModule="tableView_Practice" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="67" sectionHeaderHeight="28" sectionFooterHeight="28" id="nbW-Qo-dXu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="prototype1" rowHeight="67" id="lZi-vd-rUN">
+                                <rect key="frame" x="0.0" y="92" width="320" height="67"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lZi-vd-rUN" id="dy5-Ie-6Kh">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="66.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="lbm-kc-rRa" kind="push" id="UL8-ed-LDW"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="u5t-bb-LR4" id="FZU-Iy-hoR"/>
+                            <outlet property="delegate" destination="u5t-bb-LR4" id="uZt-J8-tOV"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="6uS-0c-sw6">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="gTu-PE-9Cc">
+                            <connections>
+                                <action selector="addButton:" destination="u5t-bb-LR4" id="tbE-AX-YfG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="myTableView" destination="nbW-Qo-dXu" id="9Xg-C0-lKB"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cad-Re-UDT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047" y="-326"/>
+        </scene>
+        <!--Add Items-->
+        <scene sceneID="Rlz-5g-ymc">
+            <objects>
+                <tableViewController id="lbm-kc-rRa" customClass="GroceryItemsTableViewController" customModule="tableView_Practice" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="elx-Hn-2H8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="groceryItem1" id="XfM-vo-1fm">
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XfM-vo-1fm" id="7T5-6x-cU0">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="lbm-kc-rRa" id="0VT-u6-Vmg"/>
+                            <outlet property="delegate" destination="lbm-kc-rRa" id="Vey-ys-iRB"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Add Items" id="uZ3-DE-lwc">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="SCm-MS-1IU">
+                            <connections>
+                                <action selector="addGroceryItemButtonPressed:" destination="lbm-kc-rRa" id="K4F-2h-c2b"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="groceryItemTableView" destination="elx-Hn-2H8" id="3TG-JY-vcf"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8AI-Lf-K70" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1456" y="-326"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="No2-Mm-f5o">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ovn-Y8-wAA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="3vg-99-bPQ"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TJl-3Q-uBv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="u5t-bb-LR4" kind="relationship" relationship="rootViewController" id="jRP-3M-i2Z"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="McA-0K-asn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="552" y="-314"/>
+        </scene>
+    </scenes>
+</document>
