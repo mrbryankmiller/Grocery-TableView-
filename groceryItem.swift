@@ -13,3 +13,11 @@ class groceryItem: NSObject {
 static var items = ["Item1", "Item2", "Item3"]
 
 }
+
+
+struct GroceryItem {
+    
+    var name: String
+    
+    var items: [String]
+}
